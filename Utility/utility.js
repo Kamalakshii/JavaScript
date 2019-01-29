@@ -1232,7 +1232,7 @@ module.exports =
                 var first = 0;
                 var last = array.length - 1;
                 while (first <= last) {
-                    var mid = first + Math.floor((last - first) / 2);
+                    var mid = first + Math.floor((last-first) / 2);
                     if (element === Number(array[mid]))
                         return true;
 

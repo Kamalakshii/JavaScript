@@ -1,3 +1,6 @@
+/** 
+ * For accessing data from utility file
+ */
 var Access = require('../Utility/utility');
 var read = require('readline-sync');
 var day = Number(process.argv[2]);
