@@ -1,11 +1,10 @@
 /******************************************************************************
  *  Execution       : Default node         cmd> node fileName.js                 
- *  Purpose         : Create 2 dimensional array in memory to read in M rows and N cols.
- * 
+ *  Purpose         :To find root of an equation a*x*x+b*x+c
  *  @description    
- *  @file           : 2DArray.js
- *  @overview       : It takes M rows, N cols and M * N inputs for 2D array.
-                      The function reads in a 2D array and prints it to the standard output.
+ *  @file           : quadratic.js
+ *  @overview       :This equation has two roots and the roots can be found 
+                     using the formula.Take a,b,c as inputs and find the roots of x
  *  @author         : KAMALAKSHI SWAMY   <swamykamalakshi103@gmail.com>
  *  @version        : 1.0.
  *  @since          : 24/01/2019
@@ -14,14 +13,15 @@
  * For accessing data from utility file
  */
 var access = require('../Utility/utility');
-var read = require('readline-sync')
+var read = require('readline-sync');
 /** 
  * Accepting the user input
  */
 
-var row = read.question("enter the rows");
-var col =read.question("enter the columns");
+var a = read.question("Enter the value of a");
+var b = read.question("enter the vae of b");
+var c = read.question("Enter the value of c");
 /** 
- * invoking array2D() to dispaly the 2Darray with given elements
-*/
-access.array2D(row,col,read);
+ * invoking quadraticRoots() to find roots of an equation
+ */
+access.quadraticRoots(a,b,c);

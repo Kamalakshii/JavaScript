@@ -14,25 +14,20 @@
 const readline = require('readline-sync');
 module.exports =
     {
-
         /********************************* String Replace ********************************/
         /* 1. String Replace
-                *-------------------
-                * Purpose   : To ensure username with minimum 3 characters and not a number,replacing USERNAME with userinput
-                *             and print the string.
-                *
-                *  @descriptipn: Declaring the function and passing the user input as argument.
-                *  @function: display name takes the user input and print it with some sentence.
-         */
+          *-------------------
+           * Purpose   : To ensure username with minimum 3 characters and not a number,replacing
+                       USERNAME with userinput and print the string.
+            *  @descriptipn: Declaring the function and passing the user input as argument.
+            *  @function: display name takes the user input and print it with some sentence.
+        */
 
-
-
-
-        StringReplace(username) {
+        stringReplace(username) {
             try {
                 /*
-                  Initializing variables
-               */
+                Initializing variables
+                */
                 var input = "Hello <<username>> ,How are u?";
                 var output = input.replace(/<<username>>/g, username);
                 console.log("The Replaced string is :" + output);
@@ -41,80 +36,61 @@ module.exports =
              */
             catch (exception) {
                 /** 
-                 * Display an error message
-                 */
+               * Display an error message
+                */
                 console.log(err);
             }
         },
 
-
-
-
-
-
-        /*****************************************FlipCoin****************************************/
-
+        /*********************************************FlipCoin****************************************/
         /**
-         *  Purpose : To flip the coin and find the percentage of head and tail
+        *  Purpose : To flip the coin and find the percentage of head and tail
          *
          * @description : declaring the function and passing user input as arguments
          * @function : using random() to get value between 0-1, if value<0.5 then it is tail otherwise heads and  find percentage of head and tail
-         */
+        */
         flipCoin(number) {
             try {
                 var heads = 0;
                 var tails = 0;
-
-
                 /*
-                check whether the given number is valid
+                 check whether the given number is valid
                 */
-
-
                 if (number > 0 && !isNaN(number)) {
                     for (var i = 0; i <= number; i++) {
-
                         /** 
                         generating random number and if its value is less than 0.5 its is tail otherwise head
-                        */
-
-                        var count = Math.random();
-
-                        /**
-                         * check the value of count is less than 0.5 if true increment tails
                          */
+                        var count = Math.random();
+                        /**
+                        * check the value of count is less than 0.5 if true increment tails
+                        */
                         if (count < 0.5) {
                             tails++;
                         }
-
                         /** 
-                         * Otherwise increment heads
-                         */
+                          * Otherwise increment heads
+                        */
                         else {
                             heads++;
                         }
                     }
-
-
                     /**
-                     *  calculate the percentage of tail and store it in tailPercent variable 
-                     */
+                      *  calculate the percentage of tail and store it in tailPercent variable 
+                      */
                     var tailPercent = (tails / number) * 100;
-
                     /** 
-                     * Display the tail percent
-                     */
+                     *  Display the tail percent
+                   */
                     console.log("Percentage of Tail is : " + tailPercent + " %");
 
                     /** 
                      * calculate the percentage of head and store it in headPercent variable
                      */
-
                     var headPercent = (heads / number) * 100;
-
                     /** 
-                     * Display the head percent
-                     */
+                    * Display the head percent
+                    */
                     console.log("Percentage of Head is : " + headPercent + " %");
 
                 }
@@ -128,12 +104,11 @@ module.exports =
             }
 
             /** 
-             * Display an error message
-             */
+            * Display an error message
+            */
             catch (exception) {
                 console.log(err);
             }
-
         },
 
 
@@ -157,8 +132,8 @@ module.exports =
                 */
 
 
-                if (year.length > 4 && !isNaN(year)) {
-                    if (year % 4 == 0 || year % 100 == 0 || year % 400) {
+                if (year.length == 4 && !isNaN(year)) {
+                    if (year % 4 == 0 || year % 400 == 0 || year % 100 == 0) {
                         /** 
                          * Display a message as it is leap year
                          */
@@ -197,14 +172,16 @@ module.exports =
         /* 4. Power of Two
         *------------------
         * @purpose : To Accept value of "N" from user and prints a table of the powers of 2 
-        *that are less than or equal to 2^N. value of N should be less then 31.
+        that are less than or equal to 2^N. value of N should be less then 31.
         *
         * @description : Prints the value of two's power
         *                
         * @function: function checks the given number is less then 31, if less then 31, then it prints
         the value of two's power i.e., 2^N value.
         */
-        powerOfTwo(number) {
+        powerOfTwo(
+
+        ) {
             try {
                 /** 
                  * accepting commandline arguments
@@ -221,14 +198,19 @@ module.exports =
                     */
                     if (pow == 0) {
                         console.log(1);
+
                     }
 
                     /** 
                      finding the power using Math.pow() function
                      */
-                    for (var i = 1; i <= pow; i++) {
+                    for (let i = 1; i <= pow; i++) {
+
                         console.log(Math.pow(2, i));
                     }
+                }
+                else {
+                    console.log("enter a valid input");
                 }
             }
 
@@ -243,9 +225,9 @@ module.exports =
         /**
          * Purpose : Print the Nth Harmonic Value.
          *  
-         * @Description : Prints the Nth harmonic number: 1/1 + 1/2 + ... + 1/N
+         * @Description :  the Nth harmonic number: 1/1 + 1/2 + ... + 1/N
          * 
-         * @Function : use for loop and display the harmonic number of the input
+         * @Function : use for loop and display the harmonic number and Print the output
          */
         harmonicNumber(number) {
             try {
@@ -287,17 +269,19 @@ module.exports =
         },
 
         /***********************************Factor******************************************** */
-
+        /** 
+         * Purpose : To compute the prime factors of a given number.
+         * @description :Factors are the numbers you multiply to get another number.Here we are finding the factors which are .
+         * @function :The function checks whether the number is a factor and a prime.
+         */
         findFactor(number) {
-
             try {
 
-                for (var i = 2; i < number; i++) {
+                for (var i = 2; i * i < number; i++) {
                     while (number % i == 0) {
                         console.log(i);
                         number = number / i
                     }
-
                 }
                 if (number > 2) {
                     console.log(number);
@@ -306,15 +290,12 @@ module.exports =
             catch (exception) {
                 console.log(err.message);
             }
-
-
-
         },
         /*************************************Gambler************************************** */
         /** 
          * Purpose : Print Number of Wins and Percentage of Win and Loss
          * 
-         * @Description : Desc -> Simulates a gambler who start with $stake and place fair $1 bets until
+         * @Description :  Simulates a gambler who start with $stake and place fair $1 bets until
            he/she goes broke or reach $goal. Keeps track of the number of
            times he/she wins and the number of bets he/she makes. Run the experiment N
             times, averages the results, and prints them out.
@@ -366,22 +347,26 @@ module.exports =
                          * increment times
                          */
                         times++;
+
                     }
 
-                    /** 
-                     * Display number of times the gambler bet
-                     */
-                    console.log("number of bets= :" + times);
-
-                    /** 
-                     * Display number of times gambler won
-                     */
-                    console.log("Gambler won " + win);
-                    /** 
-                     * Display number of times gambler lost
-                     */
-                    console.log("gambler lost" + loss);
                 }
+                console.log(times);
+
+                /** 
+                 * Display number of times the gambler bet
+                    */
+                console.log("number of bets= :" + times);
+
+                /** 
+                 * Display number of times gambler won
+                 */
+                console.log("Gambler won " + win);
+                /** 
+                 * Display number of times gambler lost
+                 */
+                console.log("gambler lost" + loss);
+
                 /** 
                  * calculate percentage of win and store it in winPercent
                  */
@@ -414,13 +399,9 @@ module.exports =
         /** 
          * 8. Coupon Number
         * @purpose : Given N distinct Coupon Numbers, how many random numbers do you 
-        *  need to generate distinct coupon number? This program simulates this random process.
-        *
-        *
-        * @description : Total random number needed to have all distinct numbers.
-        *                
-        *
-        
+        *  need to generate distinct coupon number? This program simulates this random 
+        * process.
+        * @description : Total random number needed to have all distinct numbers. 
         */
         couponNumberGenerate(number) {
             try {
@@ -463,10 +444,11 @@ module.exports =
         },
 
         /** ********************************** Calculate Distance************************************/
-        /** 
-         * 
-         * 
-         * 
+        /**Purpose :To calculate the Euclidean distance from the point (x, y) to the 
+         origin (0, 0).
+         *@description : It takes two commandline  to calculate the distance.
+         *@function :The formulae to calculate distance = sqrt(x*x + y*y)and uses
+          Math.power function
          */
         calculateDistance() {
             try {
@@ -490,8 +472,12 @@ module.exports =
 
 
         /************************************WindChill****************************************** */
-        /**
-         * 
+        /**Purpose : To calculate the windchill.
+         * @description :It takes two double command-line arguments t
+             v and prints the wind chill.
+        
+         * @function : using Math.pow(a, b) Given the temperature t (in Fahrenheit) and 
+         the wind speed v (in miles per hour),the effective temperature is found using the formula.
          */
         windChill() {
 
@@ -535,10 +521,17 @@ module.exports =
             var x = b * b - 4 * a * c;
             if (!isNaN(x)) {
 
+                /** 
+                 * if the roots are equal
+                 */
                 if (x == 0) {
                     root1 = root2 = -b / (2 * a);
                     console.log("Root1 = Root2 = :" + root1);
                 }
+
+                /** 
+                 * if the roots are real and distinct
+                 */
                 else if (x > 0) {
                     var root1 = (-b + (Math.sqrt(x))) / 2 * a;
                     var root2 = (-b - (Math.sqrt(x))) / 2 * a;
@@ -733,70 +726,73 @@ module.exports =
         /************************************************************************************** */
         /*************                    ALGORITHM PROGRAMS                          ********* */
         /************************************************************************************** */
-
-
         /** 
-         * Purpose : To check two strings are anagram or not
-         * @description : Taking 2 Strings as input such as abcd and dcba and check for Anagrams.
-         * @function : One string is an anagram of another if the second is simply a
-            rearrangement of the first.
-         */
+        * Purpose : To check two strings are anagram or not
+        * @description : Taking 2 Strings as input such as abcd and dcba and check for Anagrams.
+        * @function : One string is an anagram of another if the second is simply a
+                    rearrangement of the first.
+        */
         isAnagram(string1, string2) {
             try {
+                var valid = false;
+                /**
+                * Validation to accept only numbers.
+                */
+                do {
+                    var number = readline.question("Enter a proper string ");
+                    if (isNaN(number)) {
+                        console.log("Not a valid entry.");
+                    }
+                    else {
+                        valid = true;
+                    }
+                } while (!valid);
                 if ((string1 && string2) != null) {
-
                     /** 
-                        * Initialize s1,s2,arr1,arr2
-                        */
+                     * Initialize s1,s2,arr1,arr2
+                     */
                     var s1 = "";
                     var s2 = "";
                     var arr1 = [];
-
                     /** 
-                     * split string1 and store result in arr1
-                     */
+                    * split string1 and store result in arr1
+                    */
                     arr1 = string1.split("");
-
                     /** 
-                     * invoke sort() on arr1
+                    * invoke sort() on arr1
                      */
                     arr1.sort();
                     var arr2 = [];
-
                     /** 
-                     * split string2 and store result in arr2
-                     */
+                    * split string2 and store result in arr2
+                    */
                     arr2 = string2.split("");
-
                     /** 
-                     * invoke sort() on  arr2
+                    * invoke sort() on  arr2
                      */
                     arr2.sort();
-
-
                     /** 
-                     * condition to check if two strings are equal in length
+                    * condition to check if two strings are equal in length
                      */
+
                     if (string1.length == string2.length) {
                         for (let i = 0; i < string1.length; i++) {
                             s1 = s1 + arr1[i];
                             s2 = s2 + arr2[i];
                         }
-
                         /**
-                         *   condition to check if both strings are equal and display message
-                         */
+                        *   condition to check if both strings are equal and display message
+                        */
                         if (s1 === s2) {
-                           return true;
+                            return true;
                         }
                         else {
-             return false;
-
+                            return false;
                         }
                     }
                     /** 
-                     * if strings are not equal then display message
-                     */
+                   * if strings are not equal then display message
+                   */
                     else {
                         console.log("String1 and String2 are not anagram");
                     }
@@ -815,14 +811,28 @@ module.exports =
                 console.log(err);
             }
         },
-        /**************************************Prime Number************************************ */
+        /******************************************Prime Number************************************ */
         /**
-         *Purpose : To find Prime numbers ina goiven range.
-         *@description : Prints prime number in a given range.
-         *@function : The function finds the prime number using modulus and and count variable.
-         */
+           *Purpose : To find Prime numbers in a given range.
+            *@description : Prints prime number in a given range.
+            *@function : The function finds the prime number using modulus and and count variable.
+        */
         isPrime(number) {
             try {
+                var valid = false;
+                /**
+                 * Validation to accept only numbers.
+                  */
+                do {
+                    var number = readline.question("Enter the value in digit: ");
+                    if (isNaN(number)) {
+                        console.log("Not a valid entry.");
+                    }
+                    else {
+                        valid = true;
+                    }
+                } while (!valid);
+
                 /**
                  *  condition to check if number is not null and is a number 
                  */
@@ -830,7 +840,7 @@ module.exports =
 
                     /**
                      *  Initialize count
-                     */
+                   */
                     var count = 0;
 
                     /**
@@ -977,13 +987,14 @@ module.exports =
                  * for loop to loop until array  length and compares the current element with largest value
                  
                  */
+
                 for (let i = 1; i < arr.length; i++) {
                     ch = arr[i];
                     var j = i - 1;
                     /** 
                      * if the current element is greater then leave the element and move to next element
                      */
-                    while (j >= 0 && arr[j] > ch) {
+                    while (j >= 0 && Number(arr[j]) > ch) {
                         console.log(arr);
                         arr[j + 1] = arr[j];
                         j = j - 1;
@@ -1077,13 +1088,21 @@ module.exports =
 
         },
         /***********************************Monthly Payment************************************* */
+        /** 
+         * Purpose : To calculate the monthly payment.
+         * @description : It takes in three
+            command-line arguments P, Y, and R and calculates the monthly payments 
+         *@function : It calculates the monthly payments you
+            would have to make over Y years to pay off a P principal loan amount at R  
+            percent interest compounded monthly using the formulas.
+         */
         monthlyPayment(principal, year, rate) {
 
 
             var n = 12 * year;
             var r = rate / (12 * 100);
             var payment = (principal * r) / (1 - Math.pow((1 + r), -n));
-            console.log("Every monthly EMI : " + payment);
+            console.log("Every month payment : " + payment);
 
 
         },
@@ -1122,7 +1141,7 @@ module.exports =
                     for (let i = 0; i < n; i++) {
                         for (j = i + 1; j < n; j++) {
                             /** 
-                             * condition to caompare4 the adjacent elements
+                             * condition to caompare the adjacent elements
                              */
                             if ((arr[i]) > (arr[j])) {
                                 /**
@@ -1189,11 +1208,7 @@ module.exports =
 
             } return mid;
         },
-        /*******************************************isNumberPalindrome******************************* */
-        /** 
-         * 
-         * 
-         */
+
         /***********************************Day Of Week****************************************** */
         /** Purpose : To print the day of the week that date falls on.
          * @description :prints the day of the week that date falls on by taking three
@@ -1201,16 +1216,38 @@ module.exports =
          * @function : print 0 for Sunday, 1 for Monday, 2 for
             Tuesday, and so forth.
          */
-        dayOfWeek(day, month, year) {
-            if (isNaN(day, month, year) && (0 < day && day < 32) && (0 < month && month < 13) && (999 < year && year < 10000))
-                /** 
+        dayOfWeek() {
+            var day = Number(process.argv[2]);
+            var month = Number(process.argv[3]);
+            var year = Number(process.argv[4]);
+            if (!isNaN(day, month, year) && (0 < day && day < 32) && (0 < month && month < 13) && (999 < year && year < 10000)) {  /** 
                  * Using the formula find the day taht falls on the input day month and year
                  */
                 var y0 = year - Math.floor((14 - month) / 12);
-            var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
-            m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
-            var d0 = (day + x + Math.floor((31 * m0) / 12)) % 7;
-            return d0;
+                var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
+                m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
+                var d0 = (day + x + Math.floor((31 * m0) / 12)) % 7;
+                switch (d0) {
+                    case 0:
+                        return "sunday";
+                    case 1:
+                        return "monday";
+                    case 2:
+                        return "tuesday";
+                    case 3:
+                        return "wednesday";
+                    case 4:
+                        return "thrusday";
+                    case 5:
+                        return "friday";
+                    case 6:
+                        return "saturday";
+
+                }
+            }
+            else {
+                console.log("enter a valid input");
+            }
 
         },
         /****************************************BinarySearch********************************* */
@@ -1223,35 +1260,30 @@ module.exports =
          * Otherwise narrow it to the upper half. Repeatedly check until the value is found or
          *  the interval is empty.
         */
-        binarySearch(array, element) {
-            try {
+        binarySearch(arr, number) {
 
-
-                array.sort(function (a, b) { return a - b; });
-                console.log(array);
-                var first = 0;
-                var last = array.length - 1;
-                while (first <= last) {
-                    var mid = first + Math.floor((last-first) / 2);
-                    if (element === Number(array[mid]))
-                        return true;
-
-                    else if (Number(array[mid]) > element)
-
-                        last = mid - 1;
-
-
-                    else
-
-                        first = mid + 1;
+            arr.sort();
+            var first = 0;
+            var last = arr.length - 1;
+            //checks for the elements through mid way of the arr either to the left or right depending on the required value
+            while (first <= last) {
+                var mid = first + Math.floor((last - first) / 2);
+                if (arr[mid] == number) {
+                    return "Element Found";
+                } else if (number < arr[mid]) {
+                    last = mid - 1;
+                } else {
+                    first = mid + 1;
                 }
-                return false;
             }
-
-            catch (exception) {
-                console.log(err);
-            }
+            return "Element not found";
         },
+
+
+
+
+
+
         /**********************************Binary Search for String*************************** */
         /** 
          * Purpose : to search a given number in an array.
@@ -1330,7 +1362,7 @@ module.exports =
                 /** 
                  * condition to check if it is a valid input
                  */
-                if (isNaN(number)) {
+                if (!isNaN(number)) {
                     /** 
                      * store the digits from 0 -9 in format
                     */
@@ -1387,7 +1419,7 @@ module.exports =
          */
         convertToBinary(number) {
             try {
-                if (isNaN(number)) {
+                if (!isNaN(number)) {
                     /** 
                      * Initialize result , string 
                      */
@@ -1431,14 +1463,15 @@ module.exports =
         /********************************Binary Search the word from file***************** */
         /** 
          * Purpose : To read in a list of words from file.
-         * @description : 
-         * 
+         * @description : read in the list words comma separated from a File and
+         *  then enter the word to be searched
+        * @function :Using Arrays to sort the word list and then  the binary search
         */
         searchWord() {
             /**
              * Initialize array
             */
-            arr = [];
+            array = [];
             /** 
              * to accept input from user
              */
@@ -1457,11 +1490,10 @@ module.exports =
                 /**
                  * Split the string and store it in an array
                  */
-                array = data.toString().split(" ");
-                console.log(array);
+                array = data.toLocaleString().split(",");
 
                 /** 
-                 * search the word using binary serach
+                 * search the word using binary search
                  */
                 console.log(this.binarySearchForString(array, find));
             })
@@ -1509,63 +1541,230 @@ module.exports =
                 console.log(err.message);
             }
         },
-/**********************************IsAnagram2***************************** */
-isNumberPalindrome(num1) {
-    try {
-        var str = "";
-        num1 = num1 + "";
-        for (let i = 0; i < num1.length; i++) {
-            str = num1.charAt(i) + str;
-        }
-        if (str == num1) {
-            return true;
-        }
-        return false;
-    } catch (error) {
+        /**********************************IsAnagram2***************************** */
+        isNumberPalindrome(num1) {
+            try {
+                var str = "";
+                num1 = num1 + "";
+                for (let i = 0; i < num1.length; i++) {
+                    str = num1.charAt(i) + str;
+                }
+                if (str == num1) {
+                    return true;
+                }
+                return false;
+            } catch (error) {
 
-    }
-},
-
-isAnagramPalindrome() {
-    try {
-        console.log("Prime numbers in the range 0 to 1000 which are anagram");
-        var arr = [];
-        /**
-         * If the number is Prime push it to array.
-         */
-        for (let i = 0; i < 1000; i++) {
-            if (this.isPrime(i)) {
-                arr.push(i);
             }
-        }
-        /**
-         * Loop continuously from 1st element and second element.
-         * Invoke isAnagram and isPalindrome and pass 2 elemets 
-         * Print all the elements which are prime anagram,palindrome. 
-         * 
-         */
+        },
 
-        for (let i = 0; i < arr.length; i++) {
-            for (let j = i + 1; j < arr.length; j++) {
-                if (this.isAnagram(arr[i], arr[j])) {
-                    console.log(arr[i] + "--" + arr[j] + " Is anagram");
-                    if (this.isNumberPalindrome(arr[i])) {
-                        console.log(arr[i] + " Is palindrome");
-                    }
-                    if (this.isNumberPalindrome(arr[j])) {
-                        console.log(arr[j] + " Is palindrome");
+        isAnagramPalindrome() {
+            try {
+                console.log("Prime numbers in the range 0 to 1000 which are anagram");
+                var arr = [];
+                /**
+                 * If the number is Prime push it to array.
+                 */
+                for (let i = 0; i < 1000; i++) {
+                    if (this.isPrime(i)) {
+                        arr.push(i);
                     }
                 }
+                /**
+                 * Loop continuously from 1st element and second element.
+                 * Invoke isAnagram and isPalindrome and pass 2 elemets 
+                 * Print all the elements which are prime anagram,palindrome. 
+                 * 
+                 */
+
+                for (let i = 0; i < arr.length; i++) {
+                    for (let j = i + 1; j < arr.length; j++) {
+                        if (this.isAnagram(arr[i], arr[j])) {
+                            console.log(arr[i] + "--" + arr[j] + " Is anagram");
+                            if (this.isNumberPalindrome(arr[i])) {
+                                console.log(arr[i] + " Is palindrome");
+                            }
+                            if (this.isNumberPalindrome(arr[j])) {
+                                console.log(arr[j] + " Is palindrome");
+                            }
+                        }
+                    }
+                }
+
+
+            } catch (error) {
+                console.log(error.message);
+
             }
-        }
+        },
+        /**********************************Insertion Sort*************************************** */
+        /** Purpose : To sort the given array using insertion sort.
+         * @description : Insertion sort is based on the idea that one element from the 
+             input elements is consumed in each iteration to find its correct position i.e, 
+             the position to which it belongs in a sorted array.
+         * @function : It iterates the input elements by growing the sorted array at each
+          iteration. It compares the current element with the largest value in the sorted array.
+           If the current element is greater, then it leaves the element in its place and moves
+            on to the next element else it finds its correct position in the sorted array and
+             moves it to that position. 
+         */
+        insertionSortForString(size) {
+
+            try {
+                /** 
+                 * Initialize arr
+                 */
+
+                var arr = [];
+
+                /** 
+                 *for loop to read the array elements and store the result in arr
+                 */
+                for (let i = 0; i < size; i++) {
+                    arr[i] = readline.question("enter the array elements : ");
+                }
+
+                /** 
+                 * To display array elements
+                 */
 
 
-    } catch (error) {
-        console.log(error.message);
+                var ch;
+                /** 
+                 * for loop to loop until array  length and compares the current element with largest value
+                 
+                 */
 
-    }
-},
-    }
+                for (let i = 1; i < arr.length; i++) {
+                    ch = arr[i];
+                    var j = i - 1;
+                    /** 
+                     * if the current element is greater then leave the element and move to next element
+                     */
+                    while (j >= 0 && (arr[j]) > ch) {
+                        console.log(arr);
+                        arr[j + 1] = arr[j];
+                        j = j - 1;
+                    }
+
+                    arr[j + 1] = ch;
+
+                }
+                /** 
+                 * To display the sorted array
+                 */
+                console.log(arr);
+            }
+            /** 
+             * Display an error message
+             */
+            catch (exception) {
+                console.log(err);
+            }
+        },
+        /************************************Merge Sort******************************************* */
+        /** 
+         * Purpose : To sort the given array elements.
+         * @description :It divides input array in two halves, calls itself for the two halves and 
+         *              then merges the two sorted halves
+         * @function : The merge() function is used for merging two halves.
+                       The merge(arr, l, m, r) is key process that assumes that arr[l..m] and 
+                       arr[m+1..r] are sorted and merges the two sorted sub-arrays into one. 
+         */
+
+
+        mergeSort(array) {
+            if (array > 0) {
+                var n = array.length;
+                if (n < 2) {
+                    return;
+                }
+                var mid = Math.floor(n / 2);
+                var left = [mid];
+                var right = [n - mid];
+                for (let i = 0; i < mid; i++) {
+                    left[i] = array[i];
+                }
+                for (let j = mid; j < n; j++) {
+                    right[j - mid] = array[j];
+
+                }
+                this.mergeSort(left);
+                this.mergeSort(right);
+                this.merge(left, right, array);
+
+            }
+
+            else {
+                console.log("enter valid input");
+            }
+        },
+        merge(arr, brr, crr) {
+            var i = 0;
+            var j = 0;
+            var k = 0;
+            while (i < arr.length && j < brr.length) {
+                if (Number(arr[i]) <= Number(brr[j])) {
+                    crr[k] = arr[i];
+                    i++;
+                }
+                else {
+                    crr[k] = brr[j];
+                    j++;
+                }
+                k++;
+            }
+            while (i < arr.length) {
+                crr[k] = arr[i];
+                i++;
+                k++;
+            }
+            while (j < brr.length) {
+                crr[k] = brr[j];
+                j++;
+                k++;
+            }
+            return crr;
+        },
+    
+
+/***********************************StringPermutation******************************** */
+/** 
+ * Purpose :to return all permutation of a String
+ * @description : To get all the permutations, we will first take out the first char 
+                 from String and permute the remaining chars.If String = “ABC”
+ *@function : First char = A and remaining chars permutations are BC and CB.
+    Now we can insert first char in the available positions in the permutations
+ */
+ stringPermutation(string)
+ {  
+     try
+    {
+        var result = [];
+     if(string.length === 1)
+     {
+         result.push(string);
+         return result;
+     }
+     for(var i = 0;i < string.length; i++)
+     {
+         var firstcharacter = string[i];
+         var charleft = string.substring(0,i) + string.substring(i+1);
+         var innerPermutation = this.stringPermutation(charleft);
+         for( var j =0 ; j< innerPermutation.length;j++)
+         {
+             result.push(firstcharacter + innerPermutation[j]);
+         }
+         
+     }return result;
+    }catch(exception)
+     {
+         console.log(err.message);
+     }
+ }
+}
+    
+ 
 
 
 
