@@ -20,7 +20,9 @@ var read = require('readline-sync');
  */
 
 var size = read.question("Enter the size of an array");
-/** 
- * invoking insertionSort() to sort the given array elements
- */
+
+
+                
+
+
 access.insertionSort(size);
