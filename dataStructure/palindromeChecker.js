@@ -70,9 +70,9 @@ function deQueue() {
     for (let i = 0; i < array.length; i++) {
         L.addFront(array[i])
     }
-         /** 
-         * loop until array length and invoke removeRear() and concatenate
-         */
+    /** 
+     * loop until array length and invoke removeRear() and concatenate
+    */
     for (let i = 0; i < array.length; i++) {
         string2 = string2 + "" + L.removeRear();
     }
@@ -88,4 +88,4 @@ function deQueue() {
 
     }
 }
-    deQueue();
+deQueue();

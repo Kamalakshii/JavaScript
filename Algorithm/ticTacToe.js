@@ -1,4 +1,4 @@
-var utility = require('../utility/utility');
+var utility = require('../Utility/utility');
 const readline = require('readline-sync');
 
 function ticTacToe() {
@@ -20,7 +20,7 @@ function ticTacToe() {
             break;
         }
         else if (count == 8) {
-            console.log("Draw match.. Try next!");
+            console.log("Draw match..");
             break;
         }
         arr = utility.userPlayer(arr);
@@ -30,7 +30,7 @@ function ticTacToe() {
 
         }
         if (flag) {
-            console.log("Gosh!.. I knew it. You are the winner");
+            console.log("You are the winner");
             break;
         }
         count++;

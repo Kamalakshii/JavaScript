@@ -29,7 +29,7 @@ function Queue() {
     /** 
      * initializing array to store the elments
      */
-    var set=[];
+    var set = [];
     var flag = true;
     /** 
      * ask the user to input the number of people in the queue
@@ -41,27 +41,34 @@ function Queue() {
     if (size > 0) {
         /** 
          * loop until the length of queue
-         */ 
-           for (let i = 1; i < size; i++) {
-               /** 
-                * ask the user to enter the choice of withdraw or deposit
-                */
-            var input = readline.question("enter 1 to deposit the amount :\nEnter 2 to withdraw the amount :")
+         */
+        for (let i = 1; i < size; i++) {
+            /** 
+             * ask the user to enter the choice of withdraw or deposit
+             */
+            var input = readline.questionInt("enter 1 to deposit the amount :\nEnter 2 to withdraw the amount :")
             /** 
              * if user choose to deposit then the amount gets added
              */
             if (input == 1) {
+
                 var amount = readline.questionFloat("Enter the total amount to be deposited :")
-                var set = L.enqueue(Number(amount));
-                flag = true;
+               
+                    var set = L.enqueue(Number(amount));
+                    flag = true;
+                
             }
             /** 
              * if user chooses to withdraw the amount gets reduced
              */
             else if (input == 2) {
                 var amount = readline.questionInt("Enter the total amount to  withdraw :")
-                var get = L.enqueue(Number(-amount))
-                flag = true;
+               
+                    var get = L.enqueue(Number(-amount))
+                    flag = true;
+                
+
+               
             }
             /** 
              * ask the user to input correct choice
@@ -83,14 +90,19 @@ function Queue() {
         for (let i = 1; i < size; i++) {
             add = add + L.dequeue();
         }
-        console.log(add);
+        if (add > 0) {
+            console.log(add);
+        }
+        else {
+            console.log("insufficient balance");
+        }
         var totalamount = bankamount + add;
         console.log("Total amount remaining in bank is :" + totalamount);
         /** 
          * condition to check if the minimum cash is balanced or not
          */
         if (totalamount < bankamount) {
-            console.log("Minimum cash is not maintained in bank:");
+            console.log("Minimum cash is not maintained in bank !");
         }
         else {
             console.log("Minimum cash is maintained in bank");

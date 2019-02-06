@@ -51,7 +51,7 @@ var linkedList = new accessDs.LinkedList;
 /** 
  * ask the user to enter the number to be searched
  */
-var number = readline.question("enter the number to be searched:");
+var number = readline.questionInt("enter the number to be searched:");
 /** 
  * loop until length of an array and add the elements to the list
  */
@@ -68,19 +68,31 @@ var number = readline.question("enter the number to be searched:");
  * If it is present, remove the word from the list, else add the word to the list
  */
 if(result == true){
+    /** 
+     *removing an element  
+     */
     linkedList.removeItem(number);
     var output = linkedList.printList();
-    access.fileWrite('simple1.txt', output)
+    /** 
+     *to write into a file 
+     */
+    access.fileWrite('simple.txt', output)
     console.log("The word has been removed from the list as it was already present  ");
     console.log("The data after removing the word is : "+output)
     
 } else{
     console.log(arr);
+    /** 
+     *inserting an element and storing it in pos
+     */
      var pos = linkedList.addPos(arr,number);
      console.log("position :"+pos);
      linkedList.insertAt(number,pos);
     var output1 = linkedList.printList();
-    access.fileWrite('simple1.txt', output1)
+    /** 
+     * to write into a file
+     */
+    access.fileWrite('simple.txt', output1)
     console.log("The word has been added successfully ");
     console.log("The data after adding the word is "+output1)
 }

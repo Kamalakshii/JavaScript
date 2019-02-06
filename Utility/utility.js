@@ -733,12 +733,12 @@ console.log("Enter valid Number");
                     rearrangement of the first.
         */
         isAnagram(string1, string2) {
-            try {
+           try {
                 var valid = false;
                 /**
                 * Validation to accept only numbers.
                 */
-                do {
+                /** do {
                     var number = readline.question("Enter a proper string ");
                     if (isNaN(number)) {
                         console.log("Not a valid entry.");
@@ -746,7 +746,7 @@ console.log("Enter valid Number");
                     else {
                         valid = true;
                     }
-                } while (!valid);
+                } while (!valid);*/
                 if ((string1 && string2) != null) {
                     /** 
                      * Initialize s1,s2,arr1,arr2
@@ -811,6 +811,48 @@ console.log("Enter valid Number");
                 console.log(err);
             }
         },
+        /*********************************isAnagram1**************************************** */
+        isAnagram1(word1, word2) {
+            try {
+                var format = /[a-zA-Z0-9]/;
+                var result;
+                /**
+                 * Condition to check if the input is only characters or numbers
+                 */
+                if (format.test(word1) && format.test(word2)) {
+                    /**
+                     * Condition to check if the length of the first word is equal to the second word.
+                     * If the condition passes, it means they can not be permutations of each other. Store false in the result.
+                     */
+                    if (word1.length !== word2.length) {
+                        result = false;
+                    }
+                    /**
+                     * Split the string into an array,
+                     * Sort the array alphabetically,
+                     * Join the elements of an array into a string, and store the sorted string in a variable
+                     */
+                    var sortWord1 = word1.toString().split("").sort().join("");
+                    var sortWord2 = word2.toString().split("").sort().join("");
+                    /**
+                     * If sortWord1 string is equal to sortWord2, stores true in result, else stores false in result.
+                     */
+                    result = sortWord1 === sortWord2;
+                    /**
+                     * condition to check the result is true and to print if the given words are aragrams or not.
+                     */
+                    if (result == true) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    console.log("Enter only letters or alphabets");
+                }
+            } catch (exception) {
+                console.log(error.message);
+            }
+        },
         /******************************************Prime Number************************************ */
         /**
            *Purpose : To find Prime numbers in a given range.
@@ -823,20 +865,20 @@ console.log("Enter valid Number");
                 /**
                  * Validation to accept only numbers.
                   */
-                do {
-                    var number = readline.question("Enter the value in digit: ");
+              /**   do {
+                var number = readline.question("Enter the value in digit: ");
                     if (isNaN(number)) {
                         console.log("Not a valid entry.");
                     }
                     else {
                         valid = true;
                     }
-                } while (!valid);
+                } while (!valid);*/
 
                 /**
                  *  condition to check if number is not null and is a number 
                  */
-                if (number != null && isNaN) {
+                if (number != null && !isNaN(number)) {
 
                     /**
                      *  Initialize count
@@ -878,9 +920,59 @@ console.log("Enter valid Number");
                 console.log(err);
             }
         },
+        primenumber() {
+            try {
+                /**
+                 * initial varible to zero.
+                 */
+                i = 0;
+                num = 0;
+                //Empty array.
+                arr = [];
+    
+                for (i = 1; i <= 1000; i++) {
+                    count = 0;
+                    /**
+                     * for loop to find whether the number is prime or not.
+                     */
+                    for (num = i; num >= 1; num--) {
+                        if (i % num == 0) {
+                            count = count + 1;
+                        }
+                    }
+                    /**
+                     * if count equal to 2 then it is prime number.
+                     */
+                    if (count == 2) {
+                        /*
+                        * add the Prime number to the array
+                        */
+                        arr = i;
+                        console.log(arr);
+                    }
+                } return arr;
+            }
+            catch (err) {
+                console.log(err.message);
+            }
+        },
+        /****************************************isPrime1************************************* */
+        isPrime1(num) {
+            try {
 
-
-
+                if (num == 0 || num == 1) {
+                    return false;
+                }
+                for (let i = 2; i < num; i++) {
+                    if (num % i == 0)
+                        return false;
+                }
+                return true;
+            } catch (exception) {
+                console.log(err.message);
+             }
+    
+        },
         /**************************************BubbleSort*************************************** */
         /** 
          * Purpose : To sort a given array elements.
@@ -1879,7 +1971,7 @@ intializeGame()
 fileRead()
 {
     var fs = require('fs');
-    var f = fs.readFileSync('simple1.txt','utf8');
+    var f = fs.readFileSync('simple.txt','utf8');
     var arr = f.trim().split(' ');
     return arr;
 

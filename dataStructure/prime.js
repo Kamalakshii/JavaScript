@@ -1,9 +1,9 @@
 /******************************************************************************
- *  Execution       : Default node         cmd> node fileName.js                 
+ *  Execution       :Default node         cmd> node fileName.js                 
  *  Purpose         :To print the numbers fin the range 1-1000 which are prime.
- *  @description    Take a range of 0 - 1000 Numbers and find the Prime numbers in that 
+ *  @description    :Take a range of 0 - 1000 Numbers and find the Prime numbers in that 
                      range. Store the prime numbers in a 2D Array, the first dimension
-                      represents the range 0-100, 100-200, and so on.
+                     represents the range 0-100, 100-200, and so on.
  *  @file           :prime.js
  *  @overview       :
  *  @author         : KAMALAKSHI SWAMY   <swamykamalakshi103@gmail.com>
@@ -32,7 +32,7 @@ function prime()
     for(let i=0;i<10;i++)
     {
         prime[i]=accessDs.isPrime(first,last);
-        console.log(first+" "+last+":"+"["+prime[i]+"]");
+        console.log("[" + "[" +first+" "+last+"]" + "["+prime[i]+"]" +"]");
         /** 
          * increment first and last by 100
          */

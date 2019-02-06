@@ -37,6 +37,8 @@ function calendar() {
     /** 
      * invoking day() to calculate the month and year
      */
+    if((month>0 && month <= 12 )&& (year>999 && year<10000))
+    {
     var day = access.day(month,1,year);
     console.log(day);
     /** 
@@ -46,7 +48,8 @@ function calendar() {
     /** 
      *   if it is a leap year then the second month has 29 days
      */
-    if (leap = true) {
+    
+    if (leap == true) {
         
         dates[2] = 29;
     }
@@ -74,6 +77,10 @@ function calendar() {
         }
 
     }
+}
+else{
+    console.log("enter valid month and year")
+}
 
     console.log("\n\n");
 

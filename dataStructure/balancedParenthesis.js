@@ -3,7 +3,7 @@
  *  Purpose         : To read in arithmetic expression and ensure parentheses must appear 
                       in a balanced
      
- *  @file           :balancedParenthesis.js
+ *  @file           : balancedParenthesis.js
  *  @overview       : Take an Arithmetic Expression  where parentheses are used to 
                       order the performance of operations. Ensure parentheses must appear
                       in a balanced fashion.
@@ -24,7 +24,7 @@ function Stack() {
     /** 
      * ask the user to input a mathematical expression
      */
-    var str = readline.question("Enter your mathematical expression with parantheses : ");
+    var str = readline.question("Enter your mathematical expression with parenthesis : ");
     var ch, i;
     /** 
      * loop until length of string to get each character and store it in ch
@@ -67,7 +67,6 @@ var b= Stack();
  */
 if (b) {
     console.log("String is balanced");
-
 }
 else {
     console.log("String is not balanced");

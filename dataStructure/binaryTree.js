@@ -2,7 +2,7 @@
  *  Execution       : Default node         cmd> node fileName.js                 
  *  Purpose         : To find number of binary search tree.
      
- *  @file           :binaryTree.js
+ *  @file           : binaryTree.js
  *  @overview       :
  *  @author         : KAMALAKSHI SWAMY   <swamykamalakshi103@gmail.com>
  *  @version        : 1.0.

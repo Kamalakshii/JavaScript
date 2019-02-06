@@ -53,14 +53,14 @@ console.log("Word in the list: "+result);
 if(result === true){
     linkedList.removeItem(word);
     var output = linkedList.printList();
-    access.fileWrite('simple.txt', output)
+    access.fileWrite('simple1.txt', output)
     console.log("The word has been removed from the list as it was already present  ");
     console.log("The data after removing the word is : "+output)
     
 } else{
     linkedList.add(word);
     var output1 = linkedList.printList();
-    access.fileWrite('simple.txt', output1)
+    access.fileWrite('simple1.txt', output1)
     console.log("The word has been added successfully ");
     console.log("The data after adding the word is "+output1)
     
